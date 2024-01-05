@@ -13,18 +13,28 @@ dl {
 }
 img {
   display: block;
+}
+.mini-info li img {
+  max-width: 100%;
+}
+video {
+  display: block;
   max-width: 100%;
 }
 ul {
   list-style: none;
 }
 body {
-  background: #fdfdfb;
+  background: #faf6ed;
   color: #222;
   -webkit-font-smoothing: antialiased;
   display: grid;
   grid-template-columns: 1fr 120px minmax(300px, 800px) 1fr;
 }
+body img#icon {
+  padding-left: 10px;
+}
+
 .menu {
   grid-column: 3/5;
   margin-top: 2rem;
@@ -42,14 +52,23 @@ body {
   margin-right: 10px;
   color: #222;
   text-decoration: none;
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "IBM Flex Mono", monospace;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 0.875rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.1rem;
 }
-.title,
-h1 {
+.grid-section-vegetarianism-intro {
+  grid-column: 2/4;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 90px 300px 1fr;
+  grid-gap: 20px;
+  margin-bottom: 4rem;
+}
+.title {
   font-family: "Playfair Display SC", georgia;
   font-size: 3.5rem;
   line-height: 1;
@@ -57,58 +76,72 @@ h1 {
   margin-bottom: 1rem;
   grid-column: 1/4;
 }
-.grid-section {
-  grid-column: 2/4;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 100px 300px 1fr;
-  grid-gap: 20px;
-  margin-bottom: 4rem;
+.vegetarianism-intro {
+  grid-column: 3;
 }
-.info {
+.vegetarianism-intro h2,
+.vegetarianism-body h2,
+.grid-section-veganism-body h2 {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.9rem;
+  font-size: 2.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.1rem;
   margin-bottom: 1rem;
   color: #2e6842;
 }
-.types-title {
+.vegetarianism-body h2 {
+  font-size: 1.8rem;
+}
+.vegetarianism-body h2#types {
+  font-size: 2rem;
   text-align: center;
-  font-family: "IBM Plex Mono", monospace;
+}
+.vegetarianism-body h2#type {
   font-size: 1.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  color: #2e6842;
-}
-.types h2 {
-  font-size: 1.2rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
   color: #222;
+  margin-top: 40px;
 }
-.types h2::before {
+.vegetarianism-body h2#type::before {
   content: "";
   display: inline-block;
-  width: 20px;
+  width: 40px;
   height: 10px;
   margin-right: 10px;
   background: #cfe6b1;
 }
-.types p {
-  padding: 10px;
+.vegetarianism-intro h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  color: #636363;
+}
+.veganism-intro h3 {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  color: #636363;
+}
+.vegetarianism-intro p,
+.vegetarianism-body p,
+.veganism-body p {
+  color: #222;
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
-.description {
-  grid-column: 3;
+.vegetarianism-intro p a,
+.vegetarianism-body p a {
+  color: #2e6842;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
-.description section {
-  margin-bottom: 1.5rem;
+.vegetarianism-intro p a:hover,
+.vegetarianism-body p a:hover {
+  background: #cfe6b1;
 }
 .mini-info {
   height: 370px;
@@ -120,95 +153,31 @@ h1 {
 }
 .mini-info::-webkit-scrollbar-thumb {
   background: #cfe6b1;
-  border-left: 4px solid #fdfdfb;
-  border-right: 4px solid #fdfdfb;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
 }
 .mini-info::-webkit-scrollbar-track {
-  background: #fdfdfb;
+  background: #faf6ed;
 }
-.faq-lista {
+.grid-section-vegetarianism-body,
+.grid-section-veganism-body,
+.grid-section-veganism-intro {
   grid-column: 2/4;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 25px;
+  grid-gap: 20px;
+  margin-bottom: 4rem;
 }
-.faq-lista dt {
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: bold;
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  color: #e54;
+.veganism-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
 }
-.faq-lista dt::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 10px;
-  margin-right: 10px;
-  background: #fb5;
-}
-.faq-lista dd {
-  font-family: Helvetica, Arial;
-  margin-bottom: 0.5rem;
-  margin-left: 30px;
-}
-.mapa {
-  grid-column: 2;
-}
-.dados {
-  grid-column: 3;
-}
-.dados li {
-  margin-bottom: 1rem;
-  font-family: Helvetica, Arial;
-}
-
-.dados li::before {
-  content: "";
-  display: inline-block;
-  width: 20px;
-  height: 10px;
-  margin-right: 10px;
-  background: #fb5;
-}
-
-.copy {
-  grid-column: 3/5;
-  margin-bottom: 2rem;
-  background: #fb5;
-}
-
-.copy p {
-  padding: 20px;
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: bold;
-}
-
-@media (max-width: 700px) {
-  body {
-    grid-template-columns: 1fr;
-  }
-  .menu,
-  .grid-section,
-  .copy {
-    grid-column: 1;
-  }
-  .grid-section {
-    grid-template-columns: 100px 1fr;
-    grid-gap: 10px;
-  }
-  .animais-lista {
-    grid-column: 1;
-  }
-  .faq-lista,
-  .dados,
-  .mapa {
-    grid-column: 1/3;
-  }
-  .grid-section h1 {
-    font-size: 3rem;
-  }
-  .menu {
-    margin-top: 0px;
-  }
-  .copy {
-    margin-bottom: 0px;
-  }
+.vegan-videos {
+  display: flex;
+  flex-direction: row;
+  max-width: 30%;
+  justify-content: center;
 }
