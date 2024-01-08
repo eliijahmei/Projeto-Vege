@@ -1,0 +1,23 @@
+.faq-list {
+  grid-column: 3/3;
+}
+.faq-list dt {
+  font-size: 1.2rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2e6842;
+}
+.faq-list dt::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 10px;
+  margin-right: 10px;
+  background: #cfe6b1;
+}
+.faq-list dd {
+  font-family: Arial, Helvetica;
+  margin-bottom: 1.5rem;
+  margin-left: 40px;
+}

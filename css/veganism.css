@@ -1,0 +1,12 @@
+.veganism-intro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+.vegan-videos {
+  display: flex;
+  flex-direction: row;
+  max-width: 30%;
+  justify-content: center;
+}
