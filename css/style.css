@@ -121,3 +121,51 @@ p a:hover {
   font-family: "IBM Plex Mono", monospace;
   margin: 0;
 }
+@media screen and (max-width: 768px) {
+  body {
+    grid-template-columns: 1fr minmax(300px, 800px) 1fr;
+  }
+}
+@media screen and (max-width: 480px) {
+  .menu {
+    text-align: center;
+    padding: 15px;
+    background: #cfe6b1;
+  }
+
+  .menu li {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    padding: 15px;
+  }
+
+  .grid-section-vegetarianism-body,
+  .grid-section-veganism-body,
+  .grid-section-veganism-intro,
+  .grid-section-faq-intro,
+  .grid-section-faq-body {
+    padding: 15px;
+    margin-bottom: 1rem;
+  }
+
+  .copy,
+  .faq-list,
+  .vegetarianism-intro {
+    margin-bottom: 1.5rem;
+    padding: 15px;
+  }
+
+  .mini-info {
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .faq-list dt::before {
+    display: none;
+  }
+}
