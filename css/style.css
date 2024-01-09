@@ -96,20 +96,13 @@ p a:hover {
   margin-bottom: 1rem;
   grid-column: 1/4;
 }
-.grid-section-vegetarianism-body,
-.grid-section-veganism-body,
-.grid-section-veganism-intro,
-.grid-section-faq-intro,
-.grid-section-faq-body {
-  grid-column: 2/4;
+.grid-section {
   width: 100%;
-  box-sizing: border-box;
   padding: 25px;
   grid-gap: 20px;
+  grid-column: 2/4;
   margin-bottom: 2rem;
-}
-.grid-section-faq-intro {
-  margin-bottom: 0;
+  box-sizing: border-box;
 }
 .copy {
   grid-column: 3/5;
@@ -121,51 +114,26 @@ p a:hover {
   font-family: "IBM Plex Mono", monospace;
   margin: 0;
 }
-@media screen and (max-width: 768px) {
-  body {
-    grid-template-columns: 1fr minmax(300px, 800px) 1fr;
-  }
-}
-@media screen and (max-width: 480px) {
-  .menu {
-    text-align: center;
-    padding: 15px;
-    background: #cfe6b1;
-  }
 
-  .menu li {
-    display: block;
+@media (max-width: 950px) {
+  body {
+    grid-template-columns: 1fr;
+  }
+  .menu,
+  .grid-section,
+  .copy {
+    grid-column: 1;
+  }
+  .grid-section,
+  .grid-section.vegetarianism-intro {
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
     margin-bottom: 10px;
   }
-
-  .title {
-    text-align: center;
-    font-size: 2rem;
-    padding: 15px;
-  }
-
-  .grid-section-vegetarianism-body,
-  .grid-section-veganism-body,
-  .grid-section-veganism-intro,
-  .grid-section-faq-intro,
-  .grid-section-faq-body {
-    padding: 15px;
-    margin-bottom: 1rem;
-  }
-
-  .copy,
-  .faq-list,
-  .vegetarianism-intro {
-    margin-bottom: 1.5rem;
-    padding: 15px;
-  }
-
   .mini-info {
-    height: auto;
-    overflow-y: visible;
+    grid-column: 1;
   }
-
-  .faq-list dt::before {
-    display: none;
+  .title {
+    font-size: 2rem;
   }
 }

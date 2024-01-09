@@ -1,10 +1,10 @@
-.mini-info li img {
-  max-width: 100%;
-}
 .mini-info {
   height: 370px;
-  overflow-y: scroll;
   grid-column: 2;
+  overflow-y: scroll;
+}
+.mini-info li img {
+  max-width: 100%;
 }
 .mini-info::-webkit-scrollbar {
   width: 18px;
@@ -17,15 +17,11 @@
 .mini-info::-webkit-scrollbar-track {
   background: #faf6ed;
 }
-.grid-section-vegetarianism-intro {
-  grid-column: 2/4;
-  width: 100%;
-  box-sizing: border-box;
+.grid-section.vegetarianism-intro {
   padding: 10px;
   display: grid;
-  grid-template-columns: 90px 300px 1fr;
-  grid-gap: 20px;
   margin-bottom: 4rem;
+  grid-template-columns: 90px 300px 1fr;
 }
 .vegetarianism-intro {
   grid-column: 3;
@@ -38,15 +34,15 @@
   text-align: center;
 }
 .vegetarianism-body h2#type {
-  font-size: 1.5rem;
   color: #222;
   margin-top: 40px;
+  font-size: 1.5rem;
 }
 .vegetarianism-body h2#type::before {
   content: "";
-  display: inline-block;
   width: 40px;
   height: 10px;
   margin-right: 10px;
   background: #cfe6b1;
+  display: inline-block;
 }
