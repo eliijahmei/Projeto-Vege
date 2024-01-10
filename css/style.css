@@ -2,6 +2,10 @@
 @import url(veganism.css);
 @import url(faq.css);
 
+html.bigText {
+  font-size: 150%;
+}
+
 body,
 h1,
 h2,
