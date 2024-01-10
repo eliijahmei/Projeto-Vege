@@ -2,10 +2,6 @@
 @import url(veganism.css);
 @import url(faq.css);
 
-html.bigText {
-  font-size: 150%;
-}
-
 body,
 h1,
 h2,
@@ -100,6 +96,25 @@ p a:hover {
   margin-bottom: 1rem;
   grid-column: 1/4;
 }
+.images-list {
+  height: 370px;
+  grid-column: 2;
+  overflow-y: scroll;
+}
+.images-list li img {
+  max-width: 100%;
+}
+.images-list::-webkit-scrollbar {
+  width: 18px;
+}
+.images-list::-webkit-scrollbar-thumb {
+  background: #cfe6b1;
+  border-left: 4px solid #faf6ed;
+  border-right: 4px solid #faf6ed;
+}
+.images-list::-webkit-scrollbar-track {
+  background: #faf6ed;
+}
 .grid-section {
   width: 100%;
   padding: 25px;
@@ -134,7 +149,7 @@ p a:hover {
     grid-gap: 10px;
     margin-bottom: 10px;
   }
-  .mini-info {
+  .images-list {
     grid-column: 1;
   }
   .title {

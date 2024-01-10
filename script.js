@@ -19,7 +19,7 @@ function generateImages(numberOfImages) {
 }
 
 function imagesList() {
-  const numberOfImages = window.matchMedia("(max-width: 900px)").matches
+  const numberOfImages = window.matchMedia("(max-width: 950px)").matches
     ? smallWindowWidthImgCount
     : bigWindowWidthImgCount;
   generateImages(numberOfImages);
@@ -42,6 +42,7 @@ function initialize() {
 
 initialize();
 
+//Cabeçalho-------------------------------
 // const internalLinks = document.querySelectorAll('a[href^="#"]');
 
 // function handleLink(event) {
@@ -55,3 +56,4 @@ initialize();
 // internalLinks.forEach((link) => {
 //   link.addEventListener("click", handleLink);
 // });
+//----------------------------------------

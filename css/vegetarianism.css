@@ -1,22 +1,3 @@
-.mini-info {
-  height: 370px;
-  grid-column: 2;
-  overflow-y: scroll;
-}
-.mini-info li img {
-  max-width: 100%;
-}
-.mini-info::-webkit-scrollbar {
-  width: 18px;
-}
-.mini-info::-webkit-scrollbar-thumb {
-  background: #cfe6b1;
-  border-left: 4px solid #faf6ed;
-  border-right: 4px solid #faf6ed;
-}
-.mini-info::-webkit-scrollbar-track {
-  background: #faf6ed;
-}
 .grid-section.vegetarianism-intro {
   padding: 10px;
   display: grid;
