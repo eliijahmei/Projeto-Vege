@@ -1,52 +1,84 @@
 const ul = document.getElementById("imagesList");
-let smallWindowWidthImgCount = 7;
+const accordionList = document.querySelectorAll(".js-accordion dt");
+const internalLinks = document.querySelectorAll('.js-menu a[href^="#"]');
+const sections = document.querySelectorAll(".js-scroll");
+
 let bigWindowWidthImgCount = 6;
+let smallWindowWidthImgCount = 7;
 
-function createImageItem() {
-  const li = document.createElement("li");
-  const img = document.createElement("img");
-  img.src = "img/imagem0.svg";
-  li.appendChild(img);
-  return li;
-}
-
-function generateImages(numberOfImages) {
+function generateImagesList() {
   ul.innerHTML = "";
-  for (let img = 0; img < numberOfImages; img++) {
-    ul.appendChild(createImageItem());
-  }
-  setImages();
-}
 
-function imagesList() {
   const numberOfImages = window.matchMedia("(max-width: 950px)").matches
     ? smallWindowWidthImgCount
     : bigWindowWidthImgCount;
-  generateImages(numberOfImages);
+
+  for (let img = 0; img < numberOfImages; img++) {
+    ul.appendChild(createLiList());
+  }
+
+  function createLiList() {
+    const li = document.createElement("li");
+    const img = document.createElement("img");
+    img.src = "img/imageDefault.svg";
+    li.appendChild(img);
+    return li;
+  }
+  function setImages() {
+    const imagesList = document.querySelectorAll('[src^="img/image"]');
+
+    imagesList.forEach((img, index) => {
+      imagesList.length === bigWindowWidthImgCount
+        ? (img.src = `img/image${index + 1}.svg`)
+        : (img.src = `img/image${index + smallWindowWidthImgCount}.svg`);
+    });
+  }
+
+  setImages();
 }
+function showOrHideQuestion() {
+  const activeClass = "active";
 
-function setImages() {
-  const imagesList = document.querySelectorAll('[src^="img/imagem"]');
+  if (accordionList.length) {
+    accordionList[0].classList.toggle(activeClass);
+    accordionList[0].nextElementSibling.classList.toggle(activeClass);
 
-  imagesList.forEach((img, index) => {
-    imagesList.length === 6
-      ? (img.src = `img/imagem${index + 1}.svg`)
-      : (img.src = `img/imagem${index + smallWindowWidthImgCount}.svg`);
+    function activeAccordion() {
+      this.classList.toggle(activeClass);
+      this.nextElementSibling.classList.toggle(activeClass);
+    }
+    accordionList.forEach((item) => {
+      item.addEventListener("click", activeAccordion);
+    });
+  }
+}
+function sessionNavigation() {
+  function scrollToSection(event) {
+    event.preventDefault();
+    const href = event.currentTarget.getAttribute("href");
+    const section = document.querySelector(href);
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+
+  internalLinks.forEach((link) => {
+    link.addEventListener("click", scrollToSection);
   });
 }
 
 function initialize() {
-  window.addEventListener("DOMContentLoaded", imagesList);
-  window.addEventListener("resize", imagesList);
+  window.addEventListener("DOMContentLoaded", sessionNavigation);
+  window.addEventListener("DOMContentLoaded", generateImagesList);
+  window.addEventListener("DOMContentLoaded", showOrHideQuestion);
+  window.addEventListener("resize", generateImagesList);
 }
 
 initialize();
 
-//Cabeçalho-------------------------------
-// const internalLinks = document.querySelectorAll('a[href^="#"]');
-
+// event.preventDefault();
 // function handleLink(event) {
-//   event.preventDefault();
 //   internalLinks.forEach((link) => {
 //     link.classList.remove("active");
 //   });
@@ -56,4 +88,3 @@ initialize();
 // internalLinks.forEach((link) => {
 //   link.addEventListener("click", handleLink);
 // });
-//----------------------------------------
